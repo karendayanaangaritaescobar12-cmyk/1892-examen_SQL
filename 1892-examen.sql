@@ -93,7 +93,7 @@ BEGIN
         VALUES (
             'CC',
             'comun',
-            CONCAT('EXT-', UUID()),
+            CONCAT('EXT-', LEFT(UUID(), 8)),
             TRIM(SUBSTRING_INDEX(p_usuario_externo, ' ', 1)),
             COALESCE(TRIM(SUBSTRING_INDEX(p_usuario_externo, ' ', -1)), 'Externo'),
             DATE_SUB(CURDATE(), INTERVAL 25 YEAR),
